@@ -1,9 +1,80 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>Channel 73 Math Nerd </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collapsible Headers with Ordered Lists</title>
+    <style>
+        .collapsible {
+            background-color: #777;
+            color: white;
+            cursor: pointer;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            margin-top: 5px;
+        }
+
+        .active, .collapsible:hover {
+            background-color: #555;
+        }
+
+        .content {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            background-color: #f1f1f1;
+        }
+    </style>
 </head>
 <body>
-  <ol> 
-    <li>Introduction</li>
+
+<h2>Collapsible Ordered Lists</h2>
+
+<button class="collapsible">Category 1</button>
+<div class="content">
+    <ol>
+        <li><a href="#">Link 1.1</a></li>
+        <li><a href="#">Link 1.2</a></li>
+        <li><a href="#">Link 1.3</a></li>
+    </ol>
+</div>
+
+<button class="collapsible">Category 2</button>
+<div class="content">
+    <ol>
+        <li><a href="#">Link 2.1</a></li>
+        <li><a href="#">Link 2.2</a></li>
+        <li><a href="#">Link 2.3</a></li>
+    </ol>
+</div>
+
+<button class="collapsible">Category 3</button>
+<div class="content">
+    <ol>
+        <li><a href="#">Link 3.1</a></li>
+        <li><a href="#">Link 3.2</a></li>
+        <li><a href="#">Link 3.3</a></li>
+    </ol>
+</div>
+
+<script>
+    const coll = document.getElementsByClassName("collapsible");
+    for (let i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            const content = this.nextElementSibling;
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        });
+    }
+</script>
+
 </body>
 </html>
